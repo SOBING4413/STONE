@@ -1,0 +1,40 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "STONE: assemble debug APK",
+      "appliesTo": "/",
+      "type": "launch",
+      "command": "${workspaceRoot}\\gradlew.bat",
+      "args": [ "assembleDebug" ]
+    },
+    {
+      "taskLabel": "STONE: assemble release APK",
+      "appliesTo": "/",
+      "type": "launch",
+      "command": "${workspaceRoot}\\gradlew.bat",
+      "args": [ "assembleRelease" ]
+    },
+    {
+      "taskLabel": "STONE: install debug APK to device",
+      "appliesTo": "/",
+      "type": "launch",
+      "command": "adb",
+      "args": [ "install", "-r", "${workspaceRoot}\\app\\build\\outputs\\apk\\debug\\stone.apk" ]
+    },
+    {
+      "taskLabel": "STONE: logcat",
+      "appliesTo": "/",
+      "type": "launch",
+      "command": "adb",
+      "args": [ "logcat", "-s", "STONE" ]
+    },
+    {
+      "taskLabel": "STONE: clean",
+      "appliesTo": "/",
+      "type": "launch",
+      "command": "${workspaceRoot}\\gradlew.bat",
+      "args": [ "clean" ]
+    }
+  ]
+}

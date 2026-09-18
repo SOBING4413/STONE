@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- STONE mark: a stylised stone/dumbbell glyph drawn with vector paths only,
+     so it scales to every launcher density without raster assets. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- rounded stone body -->
+    <path
+        android:fillColor="#27D9A3"
+        android:pathData="M54,28 C66,28 76,36 78,47 C80,58 73,70 62,74 C51,78 39,74 34,65 C29,56 32,42 41,34 C45,30 49,28 54,28 Z" />
+
+    <!-- bar through the middle -->
+    <path
+        android:fillColor="#0E1116"
+        android:pathData="M38,50 h32 v8 h-32 z" />
+
+    <!-- end weights -->
+    <path
+        android:fillColor="#F98A3C"
+        android:pathData="M30,44 h8 v20 h-8 z M70,44 h8 v20 h-8 z" />
+</vector>

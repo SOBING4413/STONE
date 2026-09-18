@@ -1,0 +1,128 @@
+// STONE - application module.
+//
+// The APK is produced from: the manifest, a few vector/PNG resources, the
+// single StoneActivity.java class, assets/stone_pack.stpk, and libstone.so
+// built by CMake from the C sources in src/main/cpp. Nothing else, and no
+// third party dependency of any kind.
+// The final artifact is renamed to stone.apk by the copy task at the bottom.
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.stone.app'
+    compileSdk 34
+    ndkVersion '26.1.10909125'      // change to the NDK you installed
+
+    defaultConfig {
+        applicationId "com.stone.app"
+        minSdk 21                   // NativeActivity + GLES2 are fine from 21
+        targetSdk 34
+        versionCode 2
+        versionName "2.0.0"
+
+        externalNativeBuild {
+            cmake {
+                // c99 with GNU extensions: storage.c needs fsync/localtime_r.
+                arguments "-DANDROID_STL=none",
+                          "-DANDROID_ARM_NEON=TRUE"
+                cFlags "-Wall", "-Wextra", "-Wno-unused-parameter"
+            }
+        }
+
+        ndk {
+            // 64 bit is mandatory on Play; the 32 bit ABIs keep older phones
+            // working. Drop any line here to shrink the APK.
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.22.1"
+        }
+    }
+
+    // --------------------------------------------------------------- signing
+    // Debug builds are signed with the local debug keystore automatically.
+    // For a release APK create a keystore once:
+    //
+    //   keytool -genkeypair -v -keystore stone-release.jks -alias stone \
+    //           -keyalg RSA -keysize 2048 -validity 10000
+    //
+    // then put the four values into gradle.properties (or pass -P on the
+    // command line) and the block below picks them up.
+    signingConfigs {
+        release {
+            if (project.hasProperty('STONE_STORE_FILE')) {
+                storeFile     file(project.property('STONE_STORE_FILE'))
+                storePassword project.property('STONE_STORE_PASSWORD')
+                keyAlias      project.property('STONE_KEY_ALIAS')
+                keyPassword   project.property('STONE_KEY_PASSWORD')
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            jniDebuggable true
+            minifyEnabled false
+            externalNativeBuild { cmake { arguments "-DCMAKE_BUILD_TYPE=Debug" } }
+        }
+        release {
+            minifyEnabled false        // one tiny Java class, nothing to shrink
+            shrinkResources false
+            externalNativeBuild { cmake { arguments "-DCMAKE_BUILD_TYPE=Release" } }
+            if (project.hasProperty('STONE_STORE_FILE')) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging false   // uncompressed .so, loaded straight from the APK
+        }
+    }
+
+    // The texture pack must stay uncompressed inside the APK. That is what
+    // lets AAsset_getBuffer() return a pointer straight into the mapped APK,
+    // so loading a 1024px texture costs a memcpy into GL and nothing else -
+    // no inflate, no temporary heap buffer the size of the whole pack.
+    androidResources {
+        noCompress 'stpk'
+    }
+
+    buildFeatures {
+        buildConfig false
+    }
+
+    lint {
+        abortOnError false
+    }
+}
+
+// There are no dependencies. That is the point of the project.
+dependencies { }
+
+// -------------------------------------------------------------- stone.apk
+// The AGP names outputs app-debug.apk / app-release.apk. This task copies the
+// finished APK next to it as stone.apk, which is what the brief asks for.
+android.applicationVariants.all { variant ->
+    variant.assembleProvider.get().doLast {
+        variant.outputs.each { output ->
+            def src = output.outputFile
+            if (src != null && src.exists()) {
+                def dst = new File(src.parentFile, "stone.apk")
+                dst.delete()
+                dst.bytes = src.bytes
+                println "STONE -> ${dst.absolutePath}"
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Mirrors the dark palette in ui/theme.h so the system window behind
+         the GL surface never flashes a different colour on launch. -->
+    <color name="stone_bg">#FF0E1116</color>
+    <color name="stone_surface">#FF171C24</color>
+    <color name="stone_primary">#FF27D9A3</color>
+    <color name="stone_accent">#FFF98A3C</color>
+    <color name="ic_launcher_background">#FF0E1116</color>
+</resources>

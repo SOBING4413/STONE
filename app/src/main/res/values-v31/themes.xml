@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 12+ (API 31) draws its own system splash screen before STONE's
+  first frame exists at all - before onCreate() even runs. If none of the
+  windowSplashScreen* attributes are set explicitly, some OEM skins fall
+  back to a plain white background instead of inheriting windowBackground,
+  which is the white flash users see on cold start. Setting it explicitly
+  here removes any ambiguity.
+-->
+<resources>
+    <style name="Theme.Stone" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@color/stone_bg</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:statusBarColor">@color/stone_bg</item>
+        <item name="android:navigationBarColor">@color/stone_bg</item>
+
+        <item name="android:windowSplashScreenBackground">@color/stone_bg</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/stone_bg</item>
+        <item name="android:windowSplashScreenBrandingImage">@null</item>
+    </style>
+</resources>

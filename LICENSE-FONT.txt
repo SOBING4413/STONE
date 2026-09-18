@@ -1,0 +1,14 @@
+The bitmap font atlas embedded in app/src/main/cpp/renderer/font_data.c was
+rasterised from Liberation Sans (Regular and Bold), which is distributed under
+the SIL Open Font License, Version 1.1.
+
+Liberation Sans is Copyright (c) 2012 Red Hat, Inc.
+Liberation is a trademark of Red Hat, Inc. registered in U.S. Patent and
+Trademark Office and certain other jurisdictions.
+
+The full licence text is available at:
+    https://scripts.sil.org/OFL
+
+If you redistribute STONE, include the complete OFL 1.1 text alongside this
+notice. Run `python3 tools/gen_font.py` to regenerate the atlas from a
+different font if you prefer.

@@ -1,0 +1,243 @@
+#include "defaults.h"
+
+/* --- offline food database ------------------------------------------------ */
+const StoneFood k_default_foods[] = {
+    {1, "Nasi Putih (1 centong)", 100.0f, 130.0f, 2.7f, 28.2f, 0.3f, 0},
+    {2, "Nasi Merah", 100.0f, 111.0f, 2.6f, 23.0f, 0.9f, 0},
+    {3, "Dada Ayam Panggang", 100.0f, 165.0f, 31.0f, 0.0f, 3.6f, 0},
+    {4, "Paha Ayam Goreng", 100.0f, 245.0f, 26.0f, 3.0f, 14.0f, 0},
+    {5, "Telur Rebus (1 butir)", 50.0f, 78.0f, 6.3f, 0.6f, 5.3f, 0},
+    {6, "Telur Dadar (1 butir)", 60.0f, 110.0f, 7.0f, 1.0f, 9.0f, 0},
+    {7, "Tahu Putih", 100.0f, 76.0f, 8.1f, 1.9f, 4.8f, 0},
+    {8, "Tempe Goreng", 100.0f, 193.0f, 18.5f, 9.4f, 10.8f, 0},
+    {9, "Ikan Salmon Panggang", 100.0f, 208.0f, 20.0f, 0.0f, 13.0f, 0},
+    {10, "Ikan Tongkol", 100.0f, 132.0f, 25.0f, 0.0f, 3.0f, 0},
+    {11, "Udang Rebus", 100.0f, 99.0f, 24.0f, 0.2f, 0.3f, 0},
+    {12, "Daging Sapi Tanpa Lemak", 100.0f, 187.0f, 26.0f, 0.0f, 9.0f, 0},
+    {13, "Susu UHT Full Cream", 250.0f, 150.0f, 8.0f, 12.0f, 8.0f, 0},
+    {14, "Susu Rendah Lemak", 250.0f, 105.0f, 8.5f, 12.5f, 2.5f, 0},
+    {15, "Yoghurt Plain", 150.0f, 90.0f, 8.0f, 7.0f, 3.5f, 0},
+    {16, "Oatmeal Kering", 40.0f, 150.0f, 5.0f, 27.0f, 3.0f, 0},
+    {17, "Roti Gandum (1 lembar)", 35.0f, 90.0f, 4.0f, 15.0f, 1.5f, 0},
+    {18, "Pisang (sedang)", 120.0f, 105.0f, 1.3f, 27.0f, 0.4f, 0},
+    {19, "Apel (sedang)", 180.0f, 95.0f, 0.5f, 25.0f, 0.3f, 0},
+    {20, "Pepaya", 150.0f, 60.0f, 0.7f, 15.0f, 0.2f, 0},
+    {21, "Alpukat (setengah)", 100.0f, 160.0f, 2.0f, 9.0f, 15.0f, 0},
+    {22, "Brokoli Kukus", 100.0f, 35.0f, 2.8f, 7.0f, 0.4f, 0},
+    {23, "Bayam Rebus", 100.0f, 23.0f, 2.9f, 3.6f, 0.4f, 0},
+    {24, "Wortel", 100.0f, 41.0f, 0.9f, 10.0f, 0.2f, 0},
+    {25, "Kentang Rebus", 100.0f, 87.0f, 1.9f, 20.0f, 0.1f, 0},
+    {26, "Ubi Rebus", 100.0f, 86.0f, 1.6f, 20.1f, 0.1f, 0},
+    {27, "Mie Instan (1 bungkus)", 70.0f, 350.0f, 8.0f, 50.0f, 13.0f, 0},
+    {28, "Bakso Sapi (5 butir)", 100.0f, 200.0f, 12.0f, 10.0f, 12.0f, 0},
+    {29, "Sate Ayam (5 tusuk)", 120.0f, 250.0f, 22.0f, 8.0f, 14.0f, 0},
+    {30, "Gado-gado (1 porsi)", 250.0f, 300.0f, 12.0f, 25.0f, 17.0f, 0},
+    {31, "Nasi Goreng (1 porsi)", 250.0f, 450.0f, 12.0f, 60.0f, 17.0f, 0},
+    {32, "Soto Ayam (1 mangkuk)", 300.0f, 220.0f, 18.0f, 14.0f, 10.0f, 0},
+    {33, "Kacang Almond (1 genggam)", 30.0f, 170.0f, 6.0f, 6.0f, 15.0f, 0},
+    {34, "Kacang Tanah Rebus", 50.0f, 160.0f, 7.0f, 6.0f, 12.0f, 0},
+    {35, "Air Putih", 250.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0},
+    {36, "Kopi Hitam Tanpa Gula", 200.0f, 5.0f, 0.3f, 0.0f, 0.0f, 0},
+    {37, "Teh Manis", 250.0f, 90.0f, 0.0f, 22.0f, 0.0f, 0},
+    {38, "Jus Jeruk Tanpa Gula", 250.0f, 110.0f, 1.7f, 25.0f, 0.5f, 0},
+    {39, "Protein Shake (1 scoop)", 30.0f, 120.0f, 24.0f, 3.0f, 1.5f, 0},
+    {40, "Coklat Batang", 50.0f, 270.0f, 3.0f, 30.0f, 15.0f, 0},
+};
+const int k_default_food_count = (int)(sizeof(k_default_foods) / sizeof(k_default_foods[0]));
+
+/* --- offline workout programs --------------------------------------------- */
+const StoneWorkout k_default_workouts[] = {
+    {
+        1, "Full Body Starter",
+        "Latihan seluruh tubuh tanpa alat untuk pemula.",
+        0, 0, 20, 6.0f, 5,
+        {
+            {"Jumping Jack", "Pemanasan kardio ringan.",
+             "Lompat sambil membuka kaki dan mengangkat kedua tangan.", 3, 0, 40, 20},
+            {"Bodyweight Squat", "Melatih paha dan bokong.",
+             "Turunkan pinggul seperti duduk, punggung tetap lurus.", 3, 12, 0, 30},
+            {"Knee Push Up", "Push up bertumpu lutut.",
+             "Tumpukan lutut di lantai, turunkan dada perlahan.", 3, 10, 0, 30},
+            {"Glute Bridge", "Menguatkan pinggul dan core.",
+             "Berbaring, angkat pinggul hingga lurus, tahan 1 detik.", 3, 12, 0, 30},
+            {"Plank", "Stabilitas core.",
+             "Tahan posisi papan, perut kencang, pinggul sejajar.", 3, 0, 30, 30},
+        }
+    },
+    {
+        2, "Morning Mobility",
+        "Peregangan ringan untuk memulai hari.",
+        0, 0, 12, 3.5f, 4,
+        {
+            {"Neck Roll", "Melemaskan leher.",
+             "Putar kepala perlahan searah jarum jam lalu sebaliknya.", 2, 0, 30, 15},
+            {"Arm Circle", "Melemaskan bahu.",
+             "Putar kedua lengan ke depan lalu ke belakang.", 2, 0, 30, 15},
+            {"Cat Cow", "Mobilitas tulang belakang.",
+             "Posisi merangkak, lengkungkan dan tekuk punggung bergantian.", 2, 10, 0, 20},
+            {"Hip Opener", "Melemaskan panggul.",
+             "Posisi lunge rendah, tahan dan rasakan regangan.", 2, 0, 40, 20},
+        }
+    },
+    {
+        3, "Upper Body Basic",
+        "Fokus dada, bahu, dan lengan.",
+        0, 1, 22, 6.5f, 4,
+        {
+            {"Wall Push Up", "Push up bertumpu dinding.",
+             "Berdiri satu langkah dari dinding, dorong badan perlahan.", 3, 12, 0, 30},
+            {"Shoulder Tap", "Stabilitas bahu.",
+             "Posisi plank, sentuh bahu bergantian tanpa menggoyang pinggul.", 3, 16, 0, 30},
+            {"Superman Hold", "Punggung atas.",
+             "Tengkurap, angkat dada dan kaki bersamaan, tahan.", 3, 0, 25, 30},
+            {"Triceps Dip (kursi)", "Melatih trisep.",
+             "Bertumpu di tepi kursi, turunkan siku hingga 90 derajat.", 3, 10, 0, 40},
+        }
+    },
+    {
+        4, "Lower Body Builder",
+        "Kekuatan kaki dan bokong.",
+        1, 2, 28, 7.5f, 5,
+        {
+            {"Goblet Squat", "Squat dengan beban di dada.",
+             "Pegang dumbbell/botol air di dada, squat hingga paha sejajar.", 4, 12, 0, 45},
+            {"Walking Lunge", "Melatih quadriceps.",
+             "Melangkah panjang, lutut belakang hampir menyentuh lantai.", 3, 20, 0, 45},
+            {"Romanian Deadlift", "Hamstring dan punggung bawah.",
+             "Dorong pinggul ke belakang, punggung netral, beban dekat kaki.", 4, 10, 0, 60},
+            {"Calf Raise", "Melatih betis.",
+             "Berjinjit perlahan, tahan 1 detik di puncak.", 3, 20, 0, 30},
+            {"Wall Sit", "Ketahanan paha.",
+             "Sandarkan punggung ke dinding, lutut 90 derajat.", 3, 0, 45, 45},
+        }
+    },
+    {
+        5, "Core Crusher",
+        "Latihan perut dan stabilitas.",
+        1, 3, 18, 6.0f, 5,
+        {
+            {"Crunch", "Perut atas.",
+             "Angkat bahu dari lantai, jangan tarik leher.", 4, 15, 0, 30},
+            {"Leg Raise", "Perut bawah.",
+             "Angkat kedua kaki lurus, turunkan tanpa menyentuh lantai.", 4, 12, 0, 30},
+            {"Russian Twist", "Otot samping.",
+             "Duduk condong, putar badan ke kiri dan kanan.", 3, 20, 0, 30},
+            {"Side Plank", "Stabilitas lateral.",
+             "Tahan plank menyamping, pinggul terangkat.", 3, 0, 30, 30},
+            {"Mountain Climber", "Core dinamis.",
+             "Posisi plank, tarik lutut bergantian dengan cepat.", 3, 0, 40, 30},
+        }
+    },
+    {
+        6, "HIIT Fat Burn",
+        "Interval intensitas tinggi untuk membakar kalori.",
+        1, 5, 20, 11.0f, 4,
+        {
+            {"High Knee", "Kardio cepat.",
+             "Lari di tempat sambil mengangkat lutut setinggi pinggang.", 4, 0, 40, 20},
+            {"Burpee", "Seluruh tubuh.",
+             "Squat, plank, push up, lalu lompat ke atas.", 4, 10, 0, 40},
+            {"Skater Jump", "Kelincahan.",
+             "Lompat menyamping bergantian seperti pemain skate.", 4, 0, 40, 20},
+            {"Squat Jump", "Eksplosif kaki.",
+             "Squat lalu lompat setinggi mungkin, mendarat lembut.", 4, 12, 0, 40},
+        }
+    },
+    {
+        7, "Steady Cardio",
+        "Kardio ritme stabil, ramah sendi.",
+        0, 5, 30, 8.0f, 3,
+        {
+            {"Brisk Walk", "Jalan cepat.",
+             "Jaga ritme napas, langkah panjang dan konsisten.", 1, 0, 900, 60},
+            {"Light Jog", "Jogging ringan.",
+             "Pertahankan kecepatan di mana masih bisa berbicara.", 1, 0, 600, 60},
+            {"Cool Down Walk", "Pendinginan.",
+             "Turunkan kecepatan perlahan selama 5 menit.", 1, 0, 300, 0},
+        }
+    },
+    {
+        8, "Strength Push",
+        "Dorongan berat untuk dada, bahu, trisep.",
+        2, 4, 40, 8.5f, 5,
+        {
+            {"Barbell Bench Press", "Kekuatan dada.",
+             "Turunkan bar ke dada, dorong hingga siku lurus.", 5, 5, 0, 120},
+            {"Overhead Press", "Kekuatan bahu.",
+             "Dorong beban lurus ke atas kepala, core terkunci.", 4, 6, 0, 90},
+            {"Incline Dumbbell Press", "Dada atas.",
+             "Bangku miring 30 derajat, dorong dumbbell ke atas.", 4, 8, 0, 90},
+            {"Weighted Dip", "Trisep dan dada bawah.",
+             "Turunkan badan terkontrol, jangan terlalu dalam.", 3, 8, 0, 90},
+            {"Lateral Raise", "Bahu samping.",
+             "Angkat dumbbell ke samping hingga sejajar bahu.", 3, 12, 0, 60},
+        }
+    },
+    {
+        9, "Strength Pull",
+        "Tarikan berat untuk punggung dan bisep.",
+        2, 4, 40, 8.5f, 5,
+        {
+            {"Deadlift", "Kekuatan total.",
+             "Punggung netral, dorong lantai dengan kaki, bar dekat tubuh.", 5, 5, 0, 150},
+            {"Pull Up", "Punggung atas.",
+             "Tarik dagu melewati bar, turun terkontrol.", 4, 6, 0, 120},
+            {"Barbell Row", "Ketebalan punggung.",
+             "Condong 45 derajat, tarik bar ke perut bawah.", 4, 8, 0, 90},
+            {"Face Pull", "Bahu belakang.",
+             "Tarik tali ke arah wajah, siku tinggi.", 3, 15, 0, 60},
+            {"Barbell Curl", "Bisep.",
+             "Angkat bar tanpa mengayun badan.", 3, 10, 0, 60},
+        }
+    },
+    {
+        10, "Advanced Full Body",
+        "Sirkuit padat untuk yang sudah terlatih.",
+        2, 0, 45, 10.0f, 6,
+        {
+            {"Front Squat", "Kaki dan core.",
+             "Bar di depan bahu, siku tinggi, squat dalam.", 5, 6, 0, 120},
+            {"Weighted Pull Up", "Punggung.",
+             "Tambahkan beban, tarik dagu melewati bar.", 4, 6, 0, 120},
+            {"Bulgarian Split Squat", "Kaki unilateral.",
+             "Kaki belakang di bangku, turunkan lutut depan 90 derajat.", 4, 10, 0, 90},
+            {"Push Press", "Bahu eksplosif.",
+             "Gunakan dorongan kaki untuk mendorong bar ke atas.", 4, 6, 0, 90},
+            {"Hanging Leg Raise", "Core lanjutan.",
+             "Gantung di bar, angkat kaki lurus hingga pinggang.", 3, 12, 0, 60},
+            {"Farmer Carry", "Grip dan core.",
+             "Jalan membawa beban berat di kedua tangan, badan tegak.", 3, 0, 45, 60},
+        }
+    },
+    {
+        11, "Office Break",
+        "Sesi singkat di sela pekerjaan.",
+        0, 3, 10, 4.0f, 4,
+        {
+            {"Chair Squat", "Kaki ringan.",
+             "Berdiri dan duduk dari kursi tanpa menggunakan tangan.", 3, 12, 0, 20},
+            {"Desk Push Up", "Dada ringan.",
+             "Bertumpu di meja kokoh, turunkan dada perlahan.", 3, 10, 0, 20},
+            {"Seated Knee Tuck", "Perut.",
+             "Duduk di tepi kursi, tarik kedua lutut ke dada.", 3, 12, 0, 20},
+            {"Standing Stretch", "Peregangan.",
+             "Angkat kedua tangan, regangkan badan ke samping.", 2, 0, 30, 15},
+        }
+    },
+    {
+        12, "Evening Wind Down",
+        "Peregangan malam sebelum tidur.",
+        0, 3, 15, 3.0f, 4,
+        {
+            {"Child Pose", "Relaksasi punggung.",
+             "Duduk di tumit, julurkan tangan ke depan, napas dalam.", 2, 0, 45, 15},
+            {"Hamstring Stretch", "Regangkan paha belakang.",
+             "Duduk, raih ujung kaki tanpa membungkukkan punggung.", 2, 0, 40, 15},
+            {"Figure Four Stretch", "Regangkan pinggul.",
+             "Berbaring, silangkan pergelangan di lutut, tarik paha.", 2, 0, 40, 15},
+            {"Deep Breathing", "Menenangkan sistem saraf.",
+             "Tarik napas 4 detik, tahan 4, hembus 6 detik.", 2, 0, 60, 0},
+        }
+    },
+};
+const int k_default_workout_count = (int)(sizeof(k_default_workouts) / sizeof(k_default_workouts[0]));

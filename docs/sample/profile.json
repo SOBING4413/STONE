@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "Rangga",
+  "age": 28,
+  "sex": 0,
+  "height_cm": 172,
+  "weight_kg": 79.4,
+  "target_weight_kg": 70,
+  "activity": 2,
+  "goal": 0,
+  "weekly_workout_target": 4,
+  "configured": true
+}

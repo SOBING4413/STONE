@@ -1,0 +1,623 @@
+{
+  "schema": 1,
+  "workouts": [
+    {
+      "id": 1,
+      "name": "Full Body Starter",
+      "description": "Latihan seluruh tubuh tanpa alat untuk pemula.",
+      "level": 0,
+      "category": 0,
+      "est_minutes": 20,
+      "kcal_per_min": 6,
+      "exercises": [
+        {
+          "name": "Jumping Jack",
+          "description": "Pemanasan kardio ringan.",
+          "instruction": "Lompat sambil membuka kaki dan mengangkat kedua tangan.",
+          "sets": 3,
+          "reps": 0,
+          "duration_s": 40,
+          "rest_s": 20
+        },
+        {
+          "name": "Bodyweight Squat",
+          "description": "Melatih paha dan bokong.",
+          "instruction": "Turunkan pinggul seperti duduk, punggung tetap lurus.",
+          "sets": 3,
+          "reps": 12,
+          "duration_s": 0,
+          "rest_s": 30
+        },
+        {
+          "name": "Knee Push Up",
+          "description": "Push up bertumpu lutut.",
+          "instruction": "Tumpukan lutut di lantai, turunkan dada perlahan.",
+          "sets": 3,
+          "reps": 10,
+          "duration_s": 0,
+          "rest_s": 30
+        },
+        {
+          "name": "Glute Bridge",
+          "description": "Menguatkan pinggul dan core.",
+          "instruction": "Berbaring, angkat pinggul hingga lurus, tahan 1 detik.",
+          "sets": 3,
+          "reps": 12,
+          "duration_s": 0,
+          "rest_s": 30
+        },
+        {
+          "name": "Plank",
+          "description": "Stabilitas core.",
+          "instruction": "Tahan posisi papan, perut kencang, pinggul sejajar.",
+          "sets": 3,
+          "reps": 0,
+          "duration_s": 30,
+          "rest_s": 30
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Morning Mobility",
+      "description": "Peregangan ringan untuk memulai hari.",
+      "level": 0,
+      "category": 0,
+      "est_minutes": 12,
+      "kcal_per_min": 3.5,
+      "exercises": [
+        {
+          "name": "Neck Roll",
+          "description": "Melemaskan leher.",
+          "instruction": "Putar kepala perlahan searah jarum jam lalu sebaliknya.",
+          "sets": 2,
+          "reps": 0,
+          "duration_s": 30,
+          "rest_s": 15
+        },
+        {
+          "name": "Arm Circle",
+          "description": "Melemaskan bahu.",
+          "instruction": "Putar kedua lengan ke depan lalu ke belakang.",
+          "sets": 2,
+          "reps": 0,
+          "duration_s": 30,
+          "rest_s": 15
+        },
+        {
+          "name": "Cat Cow",
+          "description": "Mobilitas tulang belakang.",
+          "instruction": "Posisi merangkak, lengkungkan dan tekuk punggung bergantian.",
+          "sets": 2,
+          "reps": 10,
+          "duration_s": 0,
+          "rest_s": 20
+        },
+        {
+          "name": "Hip Opener",
+          "description": "Melemaskan panggul.",
+          "instruction": "Posisi lunge rendah, tahan dan rasakan regangan.",
+          "sets": 2,
+          "reps": 0,
+          "duration_s": 40,
+          "rest_s": 20
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Upper Body Basic",
+      "description": "Fokus dada, bahu, dan lengan.",
+      "level": 0,
+      "category": 1,
+      "est_minutes": 22,
+      "kcal_per_min": 6.5,
+      "exercises": [
+        {
+          "name": "Wall Push Up",
+          "description": "Push up bertumpu dinding.",
+          "instruction": "Berdiri satu langkah dari dinding, dorong badan perlahan.",
+          "sets": 3,
+          "reps": 12,
+          "duration_s": 0,
+          "rest_s": 30
+        },
+        {
+          "name": "Shoulder Tap",
+          "description": "Stabilitas bahu.",
+          "instruction": "Posisi plank, sentuh bahu bergantian tanpa menggoyang pinggul.",
+          "sets": 3,
+          "reps": 16,
+          "duration_s": 0,
+          "rest_s": 30
+        },
+        {
+          "name": "Superman Hold",
+          "description": "Punggung atas.",
+          "instruction": "Tengkurap, angkat dada dan kaki bersamaan, tahan.",
+          "sets": 3,
+          "reps": 0,
+          "duration_s": 25,
+          "rest_s": 30
+        },
+        {
+          "name": "Triceps Dip (kursi)",
+          "description": "Melatih trisep.",
+          "instruction": "Bertumpu di tepi kursi, turunkan siku hingga 90 derajat.",
+          "sets": 3,
+          "reps": 10,
+          "duration_s": 0,
+          "rest_s": 40
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Lower Body Builder",
+      "description": "Kekuatan kaki dan bokong.",
+      "level": 1,
+      "category": 2,
+      "est_minutes": 28,
+      "kcal_per_min": 7.5,
+      "exercises": [
+        {
+          "name": "Goblet Squat",
+          "description": "Squat dengan beban di dada.",
+          "instruction": "Pegang dumbbell/botol air di dada, squat hingga paha sejajar.",
+          "sets": 4,
+          "reps": 12,
+          "duration_s": 0,
+          "rest_s": 45
+        },
+        {
+          "name": "Walking Lunge",
+          "description": "Melatih quadriceps.",
+          "instruction": "Melangkah panjang, lutut belakang hampir menyentuh lantai.",
+          "sets": 3,
+          "reps": 20,
+          "duration_s": 0,
+          "rest_s": 45
+        },
+        {
+          "name": "Romanian Deadlift",
+          "description": "Hamstring dan punggung bawah.",
+          "instruction": "Dorong pinggul ke belakang, punggung netral, beban dekat kaki.",
+          "sets": 4,
+          "reps": 10,
+          "duration_s": 0,
+          "rest_s": 60
+        },
+        {
+          "name": "Calf Raise",
+          "description": "Melatih betis.",
+          "instruction": "Berjinjit perlahan, tahan 1 detik di puncak.",
+          "sets": 3,
+          "reps": 20,
+          "duration_s": 0,
+          "rest_s": 30
+        },
+        {
+          "name": "Wall Sit",
+          "description": "Ketahanan paha.",
+          "instruction": "Sandarkan punggung ke dinding, lutut 90 derajat.",
+          "sets": 3,
+          "reps": 0,
+          "duration_s": 45,
+          "rest_s": 45
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Core Crusher",
+      "description": "Latihan perut dan stabilitas.",
+      "level": 1,
+      "category": 3,
+      "est_minutes": 18,
+      "kcal_per_min": 6,
+      "exercises": [
+        {
+          "name": "Crunch",
+          "description": "Perut atas.",
+          "instruction": "Angkat bahu dari lantai, jangan tarik leher.",
+          "sets": 4,
+          "reps": 15,
+          "duration_s": 0,
+          "rest_s": 30
+        },
+        {
+          "name": "Leg Raise",
+          "description": "Perut bawah.",
+          "instruction": "Angkat kedua kaki lurus, turunkan tanpa menyentuh lantai.",
+          "sets": 4,
+          "reps": 12,
+          "duration_s": 0,
+          "rest_s": 30
+        },
+        {
+          "name": "Russian Twist",
+          "description": "Otot samping.",
+          "instruction": "Duduk condong, putar badan ke kiri dan kanan.",
+          "sets": 3,
+          "reps": 20,
+          "duration_s": 0,
+          "rest_s": 30
+        },
+        {
+          "name": "Side Plank",
+          "description": "Stabilitas lateral.",
+          "instruction": "Tahan plank menyamping, pinggul terangkat.",
+          "sets": 3,
+          "reps": 0,
+          "duration_s": 30,
+          "rest_s": 30
+        },
+        {
+          "name": "Mountain Climber",
+          "description": "Core dinamis.",
+          "instruction": "Posisi plank, tarik lutut bergantian dengan cepat.",
+          "sets": 3,
+          "reps": 0,
+          "duration_s": 40,
+          "rest_s": 30
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "HIIT Fat Burn",
+      "description": "Interval intensitas tinggi untuk membakar kalori.",
+      "level": 1,
+      "category": 5,
+      "est_minutes": 20,
+      "kcal_per_min": 11,
+      "exercises": [
+        {
+          "name": "High Knee",
+          "description": "Kardio cepat.",
+          "instruction": "Lari di tempat sambil mengangkat lutut setinggi pinggang.",
+          "sets": 4,
+          "reps": 0,
+          "duration_s": 40,
+          "rest_s": 20
+        },
+        {
+          "name": "Burpee",
+          "description": "Seluruh tubuh.",
+          "instruction": "Squat, plank, push up, lalu lompat ke atas.",
+          "sets": 4,
+          "reps": 10,
+          "duration_s": 0,
+          "rest_s": 40
+        },
+        {
+          "name": "Skater Jump",
+          "description": "Kelincahan.",
+          "instruction": "Lompat menyamping bergantian seperti pemain skate.",
+          "sets": 4,
+          "reps": 0,
+          "duration_s": 40,
+          "rest_s": 20
+        },
+        {
+          "name": "Squat Jump",
+          "description": "Eksplosif kaki.",
+          "instruction": "Squat lalu lompat setinggi mungkin, mendarat lembut.",
+          "sets": 4,
+          "reps": 12,
+          "duration_s": 0,
+          "rest_s": 40
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Steady Cardio",
+      "description": "Kardio ritme stabil, ramah sendi.",
+      "level": 0,
+      "category": 5,
+      "est_minutes": 30,
+      "kcal_per_min": 8,
+      "exercises": [
+        {
+          "name": "Brisk Walk",
+          "description": "Jalan cepat.",
+          "instruction": "Jaga ritme napas, langkah panjang dan konsisten.",
+          "sets": 1,
+          "reps": 0,
+          "duration_s": 900,
+          "rest_s": 60
+        },
+        {
+          "name": "Light Jog",
+          "description": "Jogging ringan.",
+          "instruction": "Pertahankan kecepatan di mana masih bisa berbicara.",
+          "sets": 1,
+          "reps": 0,
+          "duration_s": 600,
+          "rest_s": 60
+        },
+        {
+          "name": "Cool Down Walk",
+          "description": "Pendinginan.",
+          "instruction": "Turunkan kecepatan perlahan selama 5 menit.",
+          "sets": 1,
+          "reps": 0,
+          "duration_s": 300,
+          "rest_s": 0
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Strength Push",
+      "description": "Dorongan berat untuk dada, bahu, trisep.",
+      "level": 2,
+      "category": 4,
+      "est_minutes": 40,
+      "kcal_per_min": 8.5,
+      "exercises": [
+        {
+          "name": "Barbell Bench Press",
+          "description": "Kekuatan dada.",
+          "instruction": "Turunkan bar ke dada, dorong hingga siku lurus.",
+          "sets": 5,
+          "reps": 5,
+          "duration_s": 0,
+          "rest_s": 120
+        },
+        {
+          "name": "Overhead Press",
+          "description": "Kekuatan bahu.",
+          "instruction": "Dorong beban lurus ke atas kepala, core terkunci.",
+          "sets": 4,
+          "reps": 6,
+          "duration_s": 0,
+          "rest_s": 90
+        },
+        {
+          "name": "Incline Dumbbell Press",
+          "description": "Dada atas.",
+          "instruction": "Bangku miring 30 derajat, dorong dumbbell ke atas.",
+          "sets": 4,
+          "reps": 8,
+          "duration_s": 0,
+          "rest_s": 90
+        },
+        {
+          "name": "Weighted Dip",
+          "description": "Trisep dan dada bawah.",
+          "instruction": "Turunkan badan terkontrol, jangan terlalu dalam.",
+          "sets": 3,
+          "reps": 8,
+          "duration_s": 0,
+          "rest_s": 90
+        },
+        {
+          "name": "Lateral Raise",
+          "description": "Bahu samping.",
+          "instruction": "Angkat dumbbell ke samping hingga sejajar bahu.",
+          "sets": 3,
+          "reps": 12,
+          "duration_s": 0,
+          "rest_s": 60
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Strength Pull",
+      "description": "Tarikan berat untuk punggung dan bisep.",
+      "level": 2,
+      "category": 4,
+      "est_minutes": 40,
+      "kcal_per_min": 8.5,
+      "exercises": [
+        {
+          "name": "Deadlift",
+          "description": "Kekuatan total.",
+          "instruction": "Punggung netral, dorong lantai dengan kaki, bar dekat tubuh.",
+          "sets": 5,
+          "reps": 5,
+          "duration_s": 0,
+          "rest_s": 150
+        },
+        {
+          "name": "Pull Up",
+          "description": "Punggung atas.",
+          "instruction": "Tarik dagu melewati bar, turun terkontrol.",
+          "sets": 4,
+          "reps": 6,
+          "duration_s": 0,
+          "rest_s": 120
+        },
+        {
+          "name": "Barbell Row",
+          "description": "Ketebalan punggung.",
+          "instruction": "Condong 45 derajat, tarik bar ke perut bawah.",
+          "sets": 4,
+          "reps": 8,
+          "duration_s": 0,
+          "rest_s": 90
+        },
+        {
+          "name": "Face Pull",
+          "description": "Bahu belakang.",
+          "instruction": "Tarik tali ke arah wajah, siku tinggi.",
+          "sets": 3,
+          "reps": 15,
+          "duration_s": 0,
+          "rest_s": 60
+        },
+        {
+          "name": "Barbell Curl",
+          "description": "Bisep.",
+          "instruction": "Angkat bar tanpa mengayun badan.",
+          "sets": 3,
+          "reps": 10,
+          "duration_s": 0,
+          "rest_s": 60
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Advanced Full Body",
+      "description": "Sirkuit padat untuk yang sudah terlatih.",
+      "level": 2,
+      "category": 0,
+      "est_minutes": 45,
+      "kcal_per_min": 10,
+      "exercises": [
+        {
+          "name": "Front Squat",
+          "description": "Kaki dan core.",
+          "instruction": "Bar di depan bahu, siku tinggi, squat dalam.",
+          "sets": 5,
+          "reps": 6,
+          "duration_s": 0,
+          "rest_s": 120
+        },
+        {
+          "name": "Weighted Pull Up",
+          "description": "Punggung.",
+          "instruction": "Tambahkan beban, tarik dagu melewati bar.",
+          "sets": 4,
+          "reps": 6,
+          "duration_s": 0,
+          "rest_s": 120
+        },
+        {
+          "name": "Bulgarian Split Squat",
+          "description": "Kaki unilateral.",
+          "instruction": "Kaki belakang di bangku, turunkan lutut depan 90 derajat.",
+          "sets": 4,
+          "reps": 10,
+          "duration_s": 0,
+          "rest_s": 90
+        },
+        {
+          "name": "Push Press",
+          "description": "Bahu eksplosif.",
+          "instruction": "Gunakan dorongan kaki untuk mendorong bar ke atas.",
+          "sets": 4,
+          "reps": 6,
+          "duration_s": 0,
+          "rest_s": 90
+        },
+        {
+          "name": "Hanging Leg Raise",
+          "description": "Core lanjutan.",
+          "instruction": "Gantung di bar, angkat kaki lurus hingga pinggang.",
+          "sets": 3,
+          "reps": 12,
+          "duration_s": 0,
+          "rest_s": 60
+        },
+        {
+          "name": "Farmer Carry",
+          "description": "Grip dan core.",
+          "instruction": "Jalan membawa beban berat di kedua tangan, badan tegak.",
+          "sets": 3,
+          "reps": 0,
+          "duration_s": 45,
+          "rest_s": 60
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Office Break",
+      "description": "Sesi singkat di sela pekerjaan.",
+      "level": 0,
+      "category": 3,
+      "est_minutes": 10,
+      "kcal_per_min": 4,
+      "exercises": [
+        {
+          "name": "Chair Squat",
+          "description": "Kaki ringan.",
+          "instruction": "Berdiri dan duduk dari kursi tanpa menggunakan tangan.",
+          "sets": 3,
+          "reps": 12,
+          "duration_s": 0,
+          "rest_s": 20
+        },
+        {
+          "name": "Desk Push Up",
+          "description": "Dada ringan.",
+          "instruction": "Bertumpu di meja kokoh, turunkan dada perlahan.",
+          "sets": 3,
+          "reps": 10,
+          "duration_s": 0,
+          "rest_s": 20
+        },
+        {
+          "name": "Seated Knee Tuck",
+          "description": "Perut.",
+          "instruction": "Duduk di tepi kursi, tarik kedua lutut ke dada.",
+          "sets": 3,
+          "reps": 12,
+          "duration_s": 0,
+          "rest_s": 20
+        },
+        {
+          "name": "Standing Stretch",
+          "description": "Peregangan.",
+          "instruction": "Angkat kedua tangan, regangkan badan ke samping.",
+          "sets": 2,
+          "reps": 0,
+          "duration_s": 30,
+          "rest_s": 15
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Evening Wind Down",
+      "description": "Peregangan malam sebelum tidur.",
+      "level": 0,
+      "category": 3,
+      "est_minutes": 15,
+      "kcal_per_min": 3,
+      "exercises": [
+        {
+          "name": "Child Pose",
+          "description": "Relaksasi punggung.",
+          "instruction": "Duduk di tumit, julurkan tangan ke depan, napas dalam.",
+          "sets": 2,
+          "reps": 0,
+          "duration_s": 45,
+          "rest_s": 15
+        },
+        {
+          "name": "Hamstring Stretch",
+          "description": "Regangkan paha belakang.",
+          "instruction": "Duduk, raih ujung kaki tanpa membungkukkan punggung.",
+          "sets": 2,
+          "reps": 0,
+          "duration_s": 40,
+          "rest_s": 15
+        },
+        {
+          "name": "Figure Four Stretch",
+          "description": "Regangkan pinggul.",
+          "instruction": "Berbaring, silangkan pergelangan di lutut, tarik paha.",
+          "sets": 2,
+          "reps": 0,
+          "duration_s": 40,
+          "rest_s": 15
+        },
+        {
+          "name": "Deep Breathing",
+          "description": "Menenangkan sistem saraf.",
+          "instruction": "Tarik napas 4 detik, tahan 4, hembus 6 detik.",
+          "sets": 2,
+          "reps": 0,
+          "duration_s": 60,
+          "rest_s": 0
+        }
+      ]
+    }
+  ]
+}

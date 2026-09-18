@@ -1,0 +1,415 @@
+{
+  "schema": 1,
+  "foods": [
+    {
+      "id": 1,
+      "name": "Nasi Putih (1 centong)",
+      "serving_g": 100,
+      "kcal": 130,
+      "protein_g": 2.7,
+      "carbs_g": 28.2,
+      "fat_g": 0.3,
+      "custom": false
+    },
+    {
+      "id": 2,
+      "name": "Nasi Merah",
+      "serving_g": 100,
+      "kcal": 111,
+      "protein_g": 2.6,
+      "carbs_g": 23,
+      "fat_g": 0.9,
+      "custom": false
+    },
+    {
+      "id": 3,
+      "name": "Dada Ayam Panggang",
+      "serving_g": 100,
+      "kcal": 165,
+      "protein_g": 31,
+      "carbs_g": 0,
+      "fat_g": 3.6,
+      "custom": false
+    },
+    {
+      "id": 4,
+      "name": "Paha Ayam Goreng",
+      "serving_g": 100,
+      "kcal": 245,
+      "protein_g": 26,
+      "carbs_g": 3,
+      "fat_g": 14,
+      "custom": false
+    },
+    {
+      "id": 5,
+      "name": "Telur Rebus (1 butir)",
+      "serving_g": 50,
+      "kcal": 78,
+      "protein_g": 6.3,
+      "carbs_g": 0.6,
+      "fat_g": 5.3,
+      "custom": false
+    },
+    {
+      "id": 6,
+      "name": "Telur Dadar (1 butir)",
+      "serving_g": 60,
+      "kcal": 110,
+      "protein_g": 7,
+      "carbs_g": 1,
+      "fat_g": 9,
+      "custom": false
+    },
+    {
+      "id": 7,
+      "name": "Tahu Putih",
+      "serving_g": 100,
+      "kcal": 76,
+      "protein_g": 8.1,
+      "carbs_g": 1.9,
+      "fat_g": 4.8,
+      "custom": false
+    },
+    {
+      "id": 8,
+      "name": "Tempe Goreng",
+      "serving_g": 100,
+      "kcal": 193,
+      "protein_g": 18.5,
+      "carbs_g": 9.4,
+      "fat_g": 10.8,
+      "custom": false
+    },
+    {
+      "id": 9,
+      "name": "Ikan Salmon Panggang",
+      "serving_g": 100,
+      "kcal": 208,
+      "protein_g": 20,
+      "carbs_g": 0,
+      "fat_g": 13,
+      "custom": false
+    },
+    {
+      "id": 10,
+      "name": "Ikan Tongkol",
+      "serving_g": 100,
+      "kcal": 132,
+      "protein_g": 25,
+      "carbs_g": 0,
+      "fat_g": 3,
+      "custom": false
+    },
+    {
+      "id": 11,
+      "name": "Udang Rebus",
+      "serving_g": 100,
+      "kcal": 99,
+      "protein_g": 24,
+      "carbs_g": 0.2,
+      "fat_g": 0.3,
+      "custom": false
+    },
+    {
+      "id": 12,
+      "name": "Daging Sapi Tanpa Lemak",
+      "serving_g": 100,
+      "kcal": 187,
+      "protein_g": 26,
+      "carbs_g": 0,
+      "fat_g": 9,
+      "custom": false
+    },
+    {
+      "id": 13,
+      "name": "Susu UHT Full Cream",
+      "serving_g": 250,
+      "kcal": 150,
+      "protein_g": 8,
+      "carbs_g": 12,
+      "fat_g": 8,
+      "custom": false
+    },
+    {
+      "id": 14,
+      "name": "Susu Rendah Lemak",
+      "serving_g": 250,
+      "kcal": 105,
+      "protein_g": 8.5,
+      "carbs_g": 12.5,
+      "fat_g": 2.5,
+      "custom": false
+    },
+    {
+      "id": 15,
+      "name": "Yoghurt Plain",
+      "serving_g": 150,
+      "kcal": 90,
+      "protein_g": 8,
+      "carbs_g": 7,
+      "fat_g": 3.5,
+      "custom": false
+    },
+    {
+      "id": 16,
+      "name": "Oatmeal Kering",
+      "serving_g": 40,
+      "kcal": 150,
+      "protein_g": 5,
+      "carbs_g": 27,
+      "fat_g": 3,
+      "custom": false
+    },
+    {
+      "id": 17,
+      "name": "Roti Gandum (1 lembar)",
+      "serving_g": 35,
+      "kcal": 90,
+      "protein_g": 4,
+      "carbs_g": 15,
+      "fat_g": 1.5,
+      "custom": false
+    },
+    {
+      "id": 18,
+      "name": "Pisang (sedang)",
+      "serving_g": 120,
+      "kcal": 105,
+      "protein_g": 1.3,
+      "carbs_g": 27,
+      "fat_g": 0.4,
+      "custom": false
+    },
+    {
+      "id": 19,
+      "name": "Apel (sedang)",
+      "serving_g": 180,
+      "kcal": 95,
+      "protein_g": 0.5,
+      "carbs_g": 25,
+      "fat_g": 0.3,
+      "custom": false
+    },
+    {
+      "id": 20,
+      "name": "Pepaya",
+      "serving_g": 150,
+      "kcal": 60,
+      "protein_g": 0.7,
+      "carbs_g": 15,
+      "fat_g": 0.2,
+      "custom": false
+    },
+    {
+      "id": 21,
+      "name": "Alpukat (setengah)",
+      "serving_g": 100,
+      "kcal": 160,
+      "protein_g": 2,
+      "carbs_g": 9,
+      "fat_g": 15,
+      "custom": false
+    },
+    {
+      "id": 22,
+      "name": "Brokoli Kukus",
+      "serving_g": 100,
+      "kcal": 35,
+      "protein_g": 2.8,
+      "carbs_g": 7,
+      "fat_g": 0.4,
+      "custom": false
+    },
+    {
+      "id": 23,
+      "name": "Bayam Rebus",
+      "serving_g": 100,
+      "kcal": 23,
+      "protein_g": 2.9,
+      "carbs_g": 3.6,
+      "fat_g": 0.4,
+      "custom": false
+    },
+    {
+      "id": 24,
+      "name": "Wortel",
+      "serving_g": 100,
+      "kcal": 41,
+      "protein_g": 0.9,
+      "carbs_g": 10,
+      "fat_g": 0.2,
+      "custom": false
+    },
+    {
+      "id": 25,
+      "name": "Kentang Rebus",
+      "serving_g": 100,
+      "kcal": 87,
+      "protein_g": 1.9,
+      "carbs_g": 20,
+      "fat_g": 0.1,
+      "custom": false
+    },
+    {
+      "id": 26,
+      "name": "Ubi Rebus",
+      "serving_g": 100,
+      "kcal": 86,
+      "protein_g": 1.6,
+      "carbs_g": 20.1,
+      "fat_g": 0.1,
+      "custom": false
+    },
+    {
+      "id": 27,
+      "name": "Mie Instan (1 bungkus)",
+      "serving_g": 70,
+      "kcal": 350,
+      "protein_g": 8,
+      "carbs_g": 50,
+      "fat_g": 13,
+      "custom": false
+    },
+    {
+      "id": 28,
+      "name": "Bakso Sapi (5 butir)",
+      "serving_g": 100,
+      "kcal": 200,
+      "protein_g": 12,
+      "carbs_g": 10,
+      "fat_g": 12,
+      "custom": false
+    },
+    {
+      "id": 29,
+      "name": "Sate Ayam (5 tusuk)",
+      "serving_g": 120,
+      "kcal": 250,
+      "protein_g": 22,
+      "carbs_g": 8,
+      "fat_g": 14,
+      "custom": false
+    },
+    {
+      "id": 30,
+      "name": "Gado-gado (1 porsi)",
+      "serving_g": 250,
+      "kcal": 300,
+      "protein_g": 12,
+      "carbs_g": 25,
+      "fat_g": 17,
+      "custom": false
+    },
+    {
+      "id": 31,
+      "name": "Nasi Goreng (1 porsi)",
+      "serving_g": 250,
+      "kcal": 450,
+      "protein_g": 12,
+      "carbs_g": 60,
+      "fat_g": 17,
+      "custom": false
+    },
+    {
+      "id": 32,
+      "name": "Soto Ayam (1 mangkuk)",
+      "serving_g": 300,
+      "kcal": 220,
+      "protein_g": 18,
+      "carbs_g": 14,
+      "fat_g": 10,
+      "custom": false
+    },
+    {
+      "id": 33,
+      "name": "Kacang Almond (1 genggam)",
+      "serving_g": 30,
+      "kcal": 170,
+      "protein_g": 6,
+      "carbs_g": 6,
+      "fat_g": 15,
+      "custom": false
+    },
+    {
+      "id": 34,
+      "name": "Kacang Tanah Rebus",
+      "serving_g": 50,
+      "kcal": 160,
+      "protein_g": 7,
+      "carbs_g": 6,
+      "fat_g": 12,
+      "custom": false
+    },
+    {
+      "id": 35,
+      "name": "Air Putih",
+      "serving_g": 250,
+      "kcal": 0,
+      "protein_g": 0,
+      "carbs_g": 0,
+      "fat_g": 0,
+      "custom": false
+    },
+    {
+      "id": 36,
+      "name": "Kopi Hitam Tanpa Gula",
+      "serving_g": 200,
+      "kcal": 5,
+      "protein_g": 0.3,
+      "carbs_g": 0,
+      "fat_g": 0,
+      "custom": false
+    },
+    {
+      "id": 37,
+      "name": "Teh Manis",
+      "serving_g": 250,
+      "kcal": 90,
+      "protein_g": 0,
+      "carbs_g": 22,
+      "fat_g": 0,
+      "custom": false
+    },
+    {
+      "id": 38,
+      "name": "Jus Jeruk Tanpa Gula",
+      "serving_g": 250,
+      "kcal": 110,
+      "protein_g": 1.7,
+      "carbs_g": 25,
+      "fat_g": 0.5,
+      "custom": false
+    },
+    {
+      "id": 39,
+      "name": "Protein Shake (1 scoop)",
+      "serving_g": 30,
+      "kcal": 120,
+      "protein_g": 24,
+      "carbs_g": 3,
+      "fat_g": 1.5,
+      "custom": false
+    },
+    {
+      "id": 40,
+      "name": "Coklat Batang",
+      "serving_g": 50,
+      "kcal": 270,
+      "protein_g": 3,
+      "carbs_g": 30,
+      "fat_g": 15,
+      "custom": false
+    },
+    {
+      "id": 41,
+      "name": "Smoothie Pisang Rumahan",
+      "serving_g": 250,
+      "kcal": 210,
+      "protein_g": 6,
+      "carbs_g": 38,
+      "fat_g": 3.5,
+      "custom": true
+    }
+  ]
+}

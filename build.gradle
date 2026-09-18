@@ -1,0 +1,18 @@
+// STONE - root build script.
+//
+// Only the Android Gradle Plugin is needed: there is no Kotlin plugin, no
+// support libraries and no third party dependency of any kind. The APK
+// contains exactly one native library plus a handful of resources.
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.5.2'
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}

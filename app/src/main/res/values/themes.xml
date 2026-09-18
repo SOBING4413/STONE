@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- A plain fullscreen theme with no ActionBar. The window background is
+         painted with the app's dark surface colour so the transition from the
+         launcher into the GL surface has no white flash. -->
+    <style name="Theme.Stone" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@color/stone_bg</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:statusBarColor">@color/stone_bg</item>
+        <item name="android:navigationBarColor">@color/stone_bg</item>
+    </style>
+</resources>

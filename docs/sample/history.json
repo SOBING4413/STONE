@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "food_log": [
+    {
+      "date": "2026-09-17",
+      "food_id": 1,
+      "food_name": "Nasi Putih (1 centong)",
+      "portions": 1.5,
+      "kcal": 195,
+      "protein_g": 4.05,
+      "carbs_g": 42.3,
+      "fat_g": 0.45,
+      "meal": 0,
+      "timestamp": 1789635902
+    },
+    {
+      "date": "2026-09-17",
+      "food_id": 5,
+      "food_name": "Telur Rebus (1 butir)",
+      "portions": 1,
+      "kcal": 78,
+      "protein_g": 6.3,
+      "carbs_g": 0.6,
+      "fat_g": 5.3,
+      "meal": 1,
+      "timestamp": 1789635902
+    },
+    {
+      "date": "2026-09-17",
+      "food_id": 12,
+      "food_name": "Daging Sapi Tanpa Lemak",
+      "portions": 1,
+      "kcal": 187,
+      "protein_g": 26,
+      "carbs_g": 0,
+      "fat_g": 9,
+      "meal": 2,
+      "timestamp": 1789635902
+    },
+    {
+      "date": "2026-09-17",
+      "food_id": 41,
+      "food_name": "Smoothie Pisang Rumahan",
+      "portions": 1,
+      "kcal": 210,
+      "protein_g": 6,
+      "carbs_g": 38,
+      "fat_g": 3.5,
+      "meal": 3,
+      "timestamp": 1789635902
+    }
+  ],
+  "workout_log": [
+    {
+      "date": "2026-09-17",
+      "workout_id": 1,
+      "workout_name": "Full Body Starter",
+      "duration_s": 1620,
+      "kcal_burned": 162,
+      "timestamp": 1789635902
+    },
+    {
+      "date": "2026-09-17",
+      "workout_id": 5,
+      "workout_name": "Core Crusher",
+      "duration_s": 900,
+      "kcal_burned": 90,
+      "timestamp": 1789635902
+    }
+  ]
+}
