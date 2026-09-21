@@ -22,6 +22,98 @@ static float weight_progress(const StoneProfile *p, float current)
     }
 }
 
+/* Monday is index zero everywhere in the app's weekly views. */
+static int monday_index(const char *date)
+{
+    int day = stone_date_to_days(date);
+    int index = (day + 3) % 7; /* 1970-01-01 was Thursday. */
+    return index < 0 ? index + 7 : index;
+}
+
+static void draw_daily_focus(Rect r, float kcal, float protein,
+                             float protein_target, int workouts, int workout_target)
+{
+    const StoneTheme *t = theme();
+    float pad = ui_dp(16.0f);
+    const char *title;
+    const char *hint;
+    const char *action;
+    Color accent;
+    int action_id;
+
+    if (kcal <= 0.5f) {
+        title = "Start with a balanced meal";
+        hint = "Log breakfast to make today's calorie plan useful.";
+        action = "Log food";
+        accent = t->accent;
+        action_id = 105;
+    } else if (protein_target > 0.0f && protein < protein_target * 0.70f) {
+        title = "Protein needs attention";
+        hint = "A protein-rich snack can help close today's macro gap.";
+        action = "Open diet";
+        accent = t->primary;
+        action_id = 106;
+    } else if (workouts < workout_target) {
+        title = "Keep your weekly rhythm";
+        hint = "One session today moves you closer to this week's target.";
+        action = "Browse workouts";
+        accent = t->primary;
+        action_id = 107;
+    } else {
+        title = "You're on track";
+        hint = "Your weekly workout goal is complete. Recover and stay consistent.";
+        action = "View progress";
+        accent = t->warn;
+        action_id = 108;
+    }
+
+    render_rect_gradient(r, color_alpha(accent, 0.18f), t->surface, ui_dp(18.0f));
+    render_rect_outline(r, color_alpha(accent, 0.45f), ui_dp(18.0f), 1.0f);
+    render_rect(rect_make(r.x, r.y + pad, ui_dp(4.0f), r.h - pad * 2.0f), accent, ui_dp(2.0f));
+    render_text("TODAY'S FOCUS", r.x + pad, r.y + ui_dp(14.0f), ui_dp(10.5f), accent, 1);
+    render_text(title, r.x + pad, r.y + ui_dp(34.0f), ui_dp(16.0f), t->text, 1);
+    render_text(hint, r.x + pad, r.y + ui_dp(57.0f), ui_dp(11.5f), t->text_dim, 0);
+    if (ui_ghost_button(action_id, rect_make(r.x + pad, r.y + r.h - ui_dp(42.0f),
+                                             ui_dp(142.0f), ui_dp(30.0f)), action)) {
+        ui_navigate(action_id == 108 ? PAGE_PROGRESS :
+                    (action_id == 107 ? PAGE_WORKOUT : PAGE_DIET));
+    }
+}
+
+static void draw_week_rhythm(Rect r, const StoneApp *app)
+{
+    const StoneTheme *t = theme();
+    static const char *days[] = {"M", "T", "W", "T", "F", "S", "S"};
+    int today = stone_date_to_days(app->today);
+    int today_index = monday_index(app->today);
+    int start = today - today_index;
+    float gap = ui_dp(7.0f);
+    float cell_w = (r.w - gap * 6.0f) / 7.0f;
+    int i;
+
+    ui_card(r);
+    for (i = 0; i < 7; ++i) {
+        char date[STONE_DATE_LEN];
+        char number[8];
+        int count;
+        Rect cell = rect_make(r.x + (cell_w + gap) * i, r.y + ui_dp(16.0f), cell_w, r.h - ui_dp(28.0f));
+        stone_days_to_date(start + i, date, sizeof(date));
+        count = stone_workouts_on(date);
+        snprintf(number, sizeof(number), "%c%c", date[8], date[9]);
+        render_text_aligned(days[i], rect_make(cell.x, cell.y, cell.w, ui_dp(14.0f)), ui_dp(10.5f),
+                            i == today_index ? t->primary : t->text_faint, 1, TEXT_CENTER);
+        render_circle(cell.x + cell.w * 0.5f, cell.y + ui_dp(33.0f), ui_dp(13.0f),
+                      count > 0 ? color_alpha(t->primary, 0.22f) : t->surface_alt);
+        if (i == today_index)
+            render_ring(cell.x + cell.w * 0.5f, cell.y + ui_dp(33.0f), ui_dp(15.5f), ui_dp(1.5f), t->primary);
+        render_text_aligned(number, rect_make(cell.x, cell.y + ui_dp(25.0f), cell.w, ui_dp(16.0f)),
+                            ui_dp(11.5f), count > 0 ? t->primary : t->text_dim, count > 0, TEXT_CENTER);
+        if (count > 0)
+            render_text_aligned(count > 1 ? "2+" : "done", rect_make(cell.x, cell.y + ui_dp(54.0f), cell.w, ui_dp(14.0f)),
+                                ui_dp(9.0f), t->primary, 1, TEXT_CENTER);
+    }
+}
+
 void page_dashboard(Rect area)
 {
     StoneApp *app = stone_app();
@@ -42,7 +134,7 @@ void page_dashboard(Rect area)
     stone_day_nutrition(app->today, &kcal, &prot, &carb, &fat);
     stone_macro_targets(p, target_kcal, &tp, &tc, &tf);
 
-    content = ui_scroll_begin(PAGE_DASHBOARD, area, ui_dp(1090.0f));
+    content = ui_scroll_begin(PAGE_DASHBOARD, area, ui_dp(1260.0f));
     cur = rect_inset(content, pad, 0.0f);
     cur.y += ui_dp(4.0f);
 
@@ -114,6 +206,15 @@ void page_dashboard(Rect area)
         ui_stat_tile(rect_make(row.x + tw + gap, row.y, tw, th), "STREAK", buf, sub, t->warn);
     }
 
+    /* ---- coaching + weekly cadence ------------------------------------ */
+    ui_section_title(&cur, "YOUR PLAN");
+    card = ui_row(&cur, ui_dp(112.0f), ui_dp(12.0f));
+    draw_daily_focus(card, kcal, prot, tp, week, p->weekly_workout_target);
+
+    ui_section_title(&cur, "WEEKLY RHYTHM");
+    card = ui_row(&cur, ui_dp(94.0f), ui_dp(14.0f));
+    draw_week_rhythm(card, app);
+
     /* ---- today's calories ---------------------------------------------- */
     ui_section_title(&cur, "TODAY");
     card = ui_row(&cur, ui_dp(168.0f), ui_dp(14.0f));
@@ -131,9 +232,13 @@ void page_dashboard(Rect area)
 
         snprintf(buf, sizeof(buf), "%.0f / %.0f kcal", kcal, target_kcal);
         render_text(buf, bx, card.y + ui_dp(16.0f), ui_dp(18.0f), t->text, 1);
-        snprintf(buf, sizeof(buf), "%.0f kcal burned  -  %.0f kcal left",
-                 (float)burned, target_kcal - kcal + (float)burned);
-        render_text(buf, bx, card.y + ui_dp(40.0f), ui_dp(11.5f), t->text_faint, 0);
+        {
+            float remaining = target_kcal - kcal + (float)burned;
+            snprintf(buf, sizeof(buf), "%.0f kcal burned  -  %.0f kcal %s",
+                     (float)burned, fabsf(remaining), remaining >= 0 ? "left" : "over");
+            render_text(buf, bx, card.y + ui_dp(40.0f), ui_dp(11.5f),
+                        remaining >= 0 ? t->text_faint : t->danger, 0);
+        }
         ui_progress_bar(rect_make(bx, card.y + ui_dp(60.0f), bw, ui_dp(9.0f)),
                         eaten_t, eaten_t > 1.05f ? t->danger : t->accent);
 

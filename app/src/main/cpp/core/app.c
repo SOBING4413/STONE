@@ -815,11 +815,20 @@ int stone_kcal_burned_on(const char *date)
 
 int stone_workouts_this_week(void)
 {
+    /* This is deliberately a calendar week (Mon--Sun), not a moving seven
+       day window.  The value is presented as "this week" throughout the UI,
+       and a rolling window made the target look complete on a Monday because
+       workouts from the previous week were still included. */
     int today = stone_date_to_days(g_app.today);
+    int weekday = (today + 3) % 7;       /* 1970-01-01 was Thursday */
+    int week_start;
     int i, n = 0;
+
+    if (weekday < 0) weekday += 7;
+    week_start = today - weekday;        /* Monday */
     for (i = 0; i < g_app.workout_log_count; ++i) {
-        int d = today - stone_date_to_days(g_app.workout_log[i].date);
-        if (d >= 0 && d < 7) n++;
+        int d = stone_date_to_days(g_app.workout_log[i].date);
+        if (d >= week_start && d <= today) n++;
     }
     return n;
 }
